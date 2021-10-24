@@ -9,8 +9,8 @@ type execContext = func(name string, arg ...string) *exec.Cmd
 
 // ShellCommand prints out a fun shell command!
 func ShellCommand(cmdContext execContext) (*bytes.Buffer, error) {
-	cmd := cmdContext("git", "status")
-
+	//cmd := cmdContext("git", "status")
+	cmd := cmdContext("cmd", "/c echo hello hello hello")
 	// Set up byte buffers to read stdout
 	var outb bytes.Buffer
 	cmd.Stdout = &outb
